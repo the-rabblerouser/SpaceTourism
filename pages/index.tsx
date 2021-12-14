@@ -14,12 +14,13 @@ const Body = styled.div`
 `;
 
 const Nav = styled.nav`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100vw;
+	height: 96px;
+
 	@media (min-width: 768px) {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 100vw;
-		height: 96px;
 	}
 
 	@media (min-width: 1224px) {
@@ -41,6 +42,7 @@ const LogoContainer = styled.div`
 `;
 
 const NavLinkContainer = styled.div`
+	display: none;
 	@media (min-width: 768px) {
 		display: flex;
 		align-items: center;
@@ -73,14 +75,17 @@ const NavLink = styled.a`
 `;
 
 const Span = styled.span`
+	display: inline;
 	font-family: ${({ theme }) => theme.barlow};
 	font-weight: bold;
 	color: ${({ theme }) => theme.white};
 
 	@media (min-width: 768px) {
+		display: none;
 	}
 
 	@media (min-width: 1224px) {
+		display: inline;
 	}
 `;
 
