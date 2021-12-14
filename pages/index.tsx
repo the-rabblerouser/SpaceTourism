@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import styled from 'styled-components';
 
 import { Logo } from '../lib/icons/Logo';
+import { Hamburger } from '../lib/icons/Hamburger';
 
 const Body = styled.div`
 	height: 100vh;
@@ -41,11 +42,20 @@ const LogoContainer = styled.div`
 	align-items: center;
 	height: 100%;
 	width: 100px;
+`;
+
+const HamburgerContainer = styled.button`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100px;
+	background: none;
+	border: none;
+	cursor: pointer;
 
 	@media (min-width: 768px) {
-	}
-
-	@media (min-width: 1224px) {
+		display: none;
 	}
 `;
 
@@ -105,6 +115,10 @@ const Home: NextPage = () => {
 					<LogoContainer>
 						<Logo />
 					</LogoContainer>
+
+					<HamburgerContainer>
+						<Hamburger />
+					</HamburgerContainer>
 
 					<NavLinkContainer>
 						<NavLink>
