@@ -7,10 +7,18 @@ import { Logo } from '../lib/icons/Logo';
 const Body = styled.div`
 	height: 100vh;
 	background-color: #000;
-	background-image: url('/assets/home/background-home-desktop.jpg');
+	background-image: url('/assets/home/background-home-mobile.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+
+	@media (min-width: 768px) {
+		background-image: url('/assets/home/background-home-tablet.jpg');
+	}
+
+	@media (min-width: 1224px) {
+		background-image: url('/assets/home/background-home-desktop.jpg');
+	}
 `;
 
 const Nav = styled.nav`
