@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 
 import styled from 'styled-components';
 
@@ -26,16 +27,23 @@ const Body = styled.div`
 
 const Nav = styled.nav`
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	align-items: end;
 	width: 100vw;
-	height: 96px;
+	height: 136px;
 
 	@media (min-width: 768px) {
 	}
 
 	@media (min-width: 1224px) {
 	}
+`;
+
+const NavbarContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 96px;
+	width: 100%;
 `;
 
 const LogoContainer = styled.div`
@@ -61,28 +69,30 @@ const HamburgerContainer = styled.button`
 	}
 `;
 
-const Hr = styled.hr`
-	display: none;
+// const Hr = styled.hr`
+// 	display: none;
 
-	@media (min-width: 1224px) {
-		display: inline;
-		position: relative;
-		left: 48px;
-		width: 473px;
-		border-bottom: 0.0001px solid #979797;
-		color: #979797;
-	}
-`;
+// 	@media (min-width: 1224px) {
+// 		display: inline;
+// 		position: sticky;
+// 		left: 167px;
+// 		width: 473px;
+// 		border-bottom: 0.0001px solid #979797;
+// 		color: #979797;
+// 	}
+// `;
 
 const NavLinkContainer = styled.div`
 	display: none;
+
 	@media (min-width: 768px) {
 		display: flex;
 		align-items: center;
 		justify-content: space-evenly;
 		height: 100%;
-		background-color: rgba(225, 225, 225, 0.04);
 		width: 450px;
+
+		background-color: rgba(225, 225, 225, 0.04);
 	}
 
 	@media (min-width: 1224px) {
@@ -135,27 +145,37 @@ const Home: NextPage = () => {
 		<>
 			<Body>
 				<Nav>
-					<LogoContainer>
-						<Logo />
-					</LogoContainer>
-					<HamburgerContainer>
-						<Hamburger />
-					</HamburgerContainer>
-					<Hr />
-					<NavLinkContainer>
-						<NavLink>
-							<Span>00</Span> HOME
-						</NavLink>
-						<NavLink>
-							<Span>01</Span> DESTINATION
-						</NavLink>
-						<NavLink>
-							<Span>02</Span> CREW
-						</NavLink>
-						<NavLink>
-							<Span>03</Span> TECHNOLOGY
-						</NavLink>
-					</NavLinkContainer>
+					<NavbarContainer>
+						<LogoContainer>
+							<Logo />
+						</LogoContainer>
+						<HamburgerContainer>
+							<Hamburger />
+						</HamburgerContainer>
+						{/* <Hr /> */}
+						<NavLinkContainer>
+							<Link href='/'>
+								<NavLink>
+									<Span>00</Span> HOME
+								</NavLink>
+							</Link>
+							<Link href='/destination'>
+								<NavLink>
+									<Span>01</Span> DESTINATION
+								</NavLink>
+							</Link>
+							<Link href='/crew'>
+								<NavLink>
+									<Span>02</Span> CREW
+								</NavLink>
+							</Link>
+							<Link href='/technology'>
+								<NavLink>
+									<Span>03</Span> TECHNOLOGY
+								</NavLink>
+							</Link>
+						</NavLinkContainer>
+					</NavbarContainer>
 				</Nav>
 				<main></main>
 			</Body>
