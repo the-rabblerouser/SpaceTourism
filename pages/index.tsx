@@ -59,6 +59,19 @@ const HamburgerContainer = styled.button`
 	}
 `;
 
+const Hr = styled.hr`
+	display: none;
+
+	@media (min-width: 1224px) {
+		display: inline;
+		position: relative;
+		left: 48px;
+		width: 473px;
+		border-bottom: 0.0001px solid #979797;
+		color: #979797;
+	}
+`;
+
 const NavLinkContainer = styled.div`
 	display: none;
 	@media (min-width: 768px) {
@@ -119,7 +132,7 @@ const Home: NextPage = () => {
 					<HamburgerContainer>
 						<Hamburger />
 					</HamburgerContainer>
-
+					<Hr />
 					<NavLinkContainer>
 						<NavLink>
 							<Span>00</Span> HOME
