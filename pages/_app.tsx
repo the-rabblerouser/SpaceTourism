@@ -7,8 +7,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -21,7 +19,10 @@ a {
 }
 `;
 
-const theme = {};
+const theme = {
+	bellefair: "'Bellefair', serif",
+	barlow: "'Barlow Condensed', sans-serif",
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (

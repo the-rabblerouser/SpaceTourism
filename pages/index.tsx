@@ -3,14 +3,15 @@ import type { NextPage } from 'next';
 import styled from 'styled-components';
 
 const Introduction = styled.div`
-	color: Green;
+	font-family: ${({ theme }) => theme.bellefair};
+	font-size: 150px;
 `;
 
 const Home: NextPage = () => {
 	return (
 		<>
 			<main>
-				<Introduction>Hello World</Introduction>
+				<Introduction>Earth</Introduction>
 			</main>
 		</>
 	);
