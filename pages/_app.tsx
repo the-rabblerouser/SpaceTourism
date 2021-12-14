@@ -20,6 +20,12 @@ a {
 `;
 
 const theme = {
+	// Colors
+	black: `#0B0D17`,
+	purple: '#D0D6F9',
+	white: '#FFFFFF',
+
+	//Typography
 	bellefair: "'Bellefair', serif",
 	barlow: "'Barlow Condensed', sans-serif",
 };
