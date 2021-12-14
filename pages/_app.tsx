@@ -26,7 +26,7 @@ const theme = {
 	purple: '#D0D6F9',
 	white: '#FFFFFF',
 
-	//Typography
+	//Fonts
 	bellefair: "'Bellefair', serif",
 	barlow: "'Barlow Condensed', sans-serif",
 };
