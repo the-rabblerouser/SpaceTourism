@@ -7,11 +7,11 @@ import { Hamburger } from '../lib/icons/Hamburger';
 
 const Body = styled.div`
 	height: 100vh;
-	background-color: #000;
+	background-color: #0b0d17;
 	background-image: url('/assets/home/background-home-mobile.jpg');
 	background-position: center;
-	background-repeat: no-repeat;
 	background-size: cover;
+	background-repeat: no-repeat;
 
 	@media (min-width: 768px) {
 		background-image: url('/assets/home/background-home-tablet.jpg');
@@ -19,6 +19,8 @@ const Body = styled.div`
 
 	@media (min-width: 1224px) {
 		background-image: url('/assets/home/background-home-desktop.jpg');
+		background-position: right;
+		background-size: 65vw 100vh;
 	}
 `;
 
@@ -85,7 +87,6 @@ const NavLinkContainer = styled.div`
 
 	@media (min-width: 1224px) {
 		display: flex;
-		align-items: center;
 		justify-content: space-evenly;
 		height: 100%;
 		width: 830px;
@@ -93,10 +94,18 @@ const NavLinkContainer = styled.div`
 `;
 
 const NavLink = styled.a`
+	display: flex;
+	align-items: center;
+	height: 100%;
 	font-family: ${({ theme }) => theme.barlow};
 	color: ${({ theme }) => theme.white};
 	font-size: 16px;
 	letter-spacing: 2.7px;
+	cursor: pointer;
+
+	&:hover {
+		border-bottom: 3px solid ${({ theme }) => theme.white};
+	}
 
 	@media (min-width: 768px) {
 	}
@@ -110,6 +119,7 @@ const Span = styled.span`
 	font-family: ${({ theme }) => theme.barlow};
 	font-weight: bold;
 	color: ${({ theme }) => theme.white};
+	margin-right: 10px;
 
 	@media (min-width: 768px) {
 		display: none;
@@ -128,7 +138,6 @@ const Home: NextPage = () => {
 					<LogoContainer>
 						<Logo />
 					</LogoContainer>
-
 					<HamburgerContainer>
 						<Hamburger />
 					</HamburgerContainer>
