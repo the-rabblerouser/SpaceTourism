@@ -4,12 +4,6 @@ import styled from 'styled-components';
 
 import Navbar from '../components/Navbar/Navbar';
 
-import {
-	SubHeading2,
-	Heading2,
-	BodyText,
-} from '../components/GlobalThemeComponents.styled';
-
 const Body = styled.div`
 	height: 100vh;
 	background-color: #0b0d17;
@@ -42,6 +36,64 @@ const Container = styled.div`
 	}
 `;
 
+export const SubHeading = styled.h6`
+	font-family: ${({ theme }) => theme.barlow};
+	font-size: 16px;
+	margin: 0;
+	color: ${({ theme }) => theme.purple};
+	letter-spacing: 2.36px;
+
+	@media (min-width: 768px) {
+		font-size: 20px;
+		letter-spacing: 3.38px;
+		margin: 5rem 0 0 0;
+		word-spacing: 1px;
+	}
+
+	@media (min-width: 1224px) {
+	}
+`;
+
+const Heading = styled.h2`
+	font-family: ${({ theme }) => theme.bellefair};
+	font-size: 80px;
+	margin: 1rem 0 0 0;
+	color: ${({ theme }) => theme.white};
+
+	@media (min-width: 768px) {
+		font-size: 150px;
+		line-height: 150px;
+		margin: 2rem 0 0 0;
+	}
+
+	@media (min-width: 1224px) {
+	}
+`;
+
+const BodyText = styled.p`
+	height: 150px;
+	width: 327px;
+	margin: 1rem 0 0 0;
+	font-family: ${({ theme }) => theme.barlow};
+	font-size: 18px;
+	line-height: 32px;
+	word-spacing: 1px;
+	text-align: center;
+	color: ${({ theme }) => theme.purple};
+
+	@media (min-width: 768px) {
+		height: 112px;
+		width: 444px;
+		margin: 2rem 0 0 0;
+		font-size: 19px;
+		line-height: 28px;
+		word-spacing: 2px;
+	}
+
+	@media (min-width: 1224px) {
+	}
+`;
+
 const Oval = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -59,6 +111,11 @@ const Oval = styled.div`
 	color: ${({ theme }) => theme.black};
 
 	@media (min-width: 768px) {
+		height: 242px;
+		width: 242px;
+		font-size: 32px;
+		letter-spacing: 2px;
+		margin-top: 11rem;
 	}
 
 	@media (min-width: 1224px) {
@@ -72,9 +129,9 @@ const Home: NextPage = () => {
 				<Navbar />
 				<main>
 					<Container>
-						<SubHeading2 margin='0'>SO, YOU WANT TO TRAVEL TO</SubHeading2>
-						<Heading2 margin='1rem 0 0 0'>SPACE</Heading2>
-						<BodyText margin='1rem 0 0 0' width='327px' height='150px'>
+						<SubHeading>SO, YOU WANT TO TRAVEL TO</SubHeading>
+						<Heading>SPACE</Heading>
+						<BodyText>
 							Let&apos;s face it; if you want to go to space, you might as well
 							genuinely go to outer space and not hover kind of on the edge of
 							it. Well sit back, and relax because we&apos;ll give you a truly
