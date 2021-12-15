@@ -28,6 +28,7 @@ const Home: NextPage = () => {
 		<>
 			<Body>
 				<Navbar />
+
 				<main></main>
 			</Body>
 		</>

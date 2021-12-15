@@ -34,8 +34,12 @@ export const LogoContainer = styled.div`
 	width: 100px;
 `;
 
-export const HamburgerContainer = styled.button`
-	display: flex;
+interface HamburgerTypes {
+	showModal: boolean;
+}
+
+export const HamburgerContainer = styled.button<HamburgerTypes>`
+	display: ${({ showModal }) => (showModal ? 'none' : 'flex')};
 	justify-content: center;
 	align-items: center;
 	height: 100%;
@@ -71,7 +75,6 @@ export const NavLinkContainer = styled.div`
 		justify-content: space-evenly;
 		height: 100%;
 		width: 450px;
-
 		background-color: rgba(225, 225, 225, 0.04);
 	}
 
