@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface HamburgerTypes {
+	showModal: boolean;
+}
+
 export const Nav = styled.nav`
 	display: flex;
 	align-items: start;
@@ -33,10 +37,6 @@ export const LogoContainer = styled.div`
 	height: 100%;
 	width: 100px;
 `;
-
-interface HamburgerTypes {
-	showModal: boolean;
-}
 
 export const HamburgerContainer = styled.button<HamburgerTypes>`
 	display: ${({ showModal }) => (showModal ? 'none' : 'flex')};
