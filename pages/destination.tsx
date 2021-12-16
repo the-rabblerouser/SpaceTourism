@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { NextPage } from 'next';
 
 import styled from 'styled-components';
@@ -167,7 +167,11 @@ const Hr = styled.hr`
 	}
 `;
 
-const StatText = styled.p`
+interface StatTextTypes {
+	marginTop?: string;
+}
+
+const StatText = styled.p<StatTextTypes>`
 	font-family: ${({ theme }) => theme.barlow};
 	font-size: 14px;
 	font-style: normal;
@@ -214,7 +218,7 @@ const destination: NextPage = () => {
 						<SubHeading>
 							<Span>01</Span> PICK YOUR DESTINATION
 						</SubHeading>
-						<Img src='/assets/destination/image-moon.png' />
+						<Img src='./assets/destination/image-moon.png' />
 						<PlanetToggleContainer>
 							<PlanetLink>MOON</PlanetLink>
 							<PlanetLink>MARS</PlanetLink>
