@@ -209,6 +209,8 @@ const Stat = styled.p`
 `;
 
 const destination: NextPage = () => {
+	const [planets] = useState<string[]>(['MOON', 'MARS', 'EUROPA', 'TITAN']);
+
 	return (
 		<>
 			<Body>
@@ -220,10 +222,9 @@ const destination: NextPage = () => {
 						</SubHeading>
 						<Img src='./assets/destination/image-moon.png' />
 						<PlanetToggleContainer>
-							<PlanetLink>MOON</PlanetLink>
-							<PlanetLink>MARS</PlanetLink>
-							<PlanetLink>EUROPA</PlanetLink>
-							<PlanetLink>TITAN</PlanetLink>
+							{planets.map((planet) => (
+								<PlanetLink>{planet}</PlanetLink>
+							))}
 						</PlanetToggleContainer>
 						<Heading>MOON</Heading>
 						<BodyText>
