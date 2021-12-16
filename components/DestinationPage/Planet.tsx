@@ -10,6 +10,9 @@ const Img = styled.img`
 	margin-top: 32px;
 
 	@media (min-width: 768px) {
+		height: 300px;
+		width: 300px;
+		margin-top: 60px;
 	}
 
 	@media (min-width: 1224px) {
@@ -25,6 +28,9 @@ const PlanetToggleContainer = styled.div`
 	margin-top: 26px;
 
 	@media (min-width: 768px) {
+		height: 34px;
+		width: 285.5px;
+		margin-top: 50px;
 	}
 
 	@media (min-width: 1224px) {
@@ -59,6 +65,10 @@ const PlanetLink = styled.button<PlanetLinkTypes>`
 	}
 
 	@media (min-width: 768px) {
+		height: 19px;
+		font-size: 16px;
+		line-height: 19px;
+		letter-spacing: 2.700000047683716px;
 	}
 
 	@media (min-width: 1224px) {
@@ -77,6 +87,12 @@ const Heading = styled.h2`
 	color: ${({ theme }) => theme.white};
 
 	@media (min-width: 768px) {
+		height: 92px;
+		width: 266px;
+		font-size: 80px;
+		line-height: 92px;
+		letter-spacing: 0px;
+		margin: 32px 0 0 0;
 	}
 
 	@media (min-width: 1224px) {
@@ -85,7 +101,7 @@ const Heading = styled.h2`
 
 const BodyText = styled.p`
 	width: 257px;
-	margin: 1px 0 2rem 0;
+	margin: 1px 0 0 0;
 	font-family: ${({ theme }) => theme.barlow};
 	font-style: normal;
 	font-weight: 400;
@@ -95,6 +111,12 @@ const BodyText = styled.p`
 	color: ${({ theme }) => theme.purple};
 
 	@media (min-width: 768px) {
+		height: 84px;
+		width: 573px;
+		font-size: 19px;
+		line-height: 28px;
+		letter-spacing: 0px;
+		word-spacing: 2px;
 	}
 
 	@media (min-width: 1224px) {
@@ -104,12 +126,27 @@ const BodyText = styled.p`
 const Hr = styled.hr`
 	height: 1px;
 	width: 327px;
-	left: 24px;
-	top: 605px;
 	border-radius: 0px;
 	color: ${({ theme }) => theme.hrBlack};
 
 	@media (min-width: 768px) {
+		display: none;
+	}
+
+	@media (min-width: 1224px) {
+	}
+`;
+
+const StatContainer = styled.div`
+	@media (min-width: 768px) {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: end;
+		height: 90px;
+		width: 573px;
+		margin-top: 49px;
+		border-top: 1px solid ${({ theme }) => theme.hrBlack};
 	}
 
 	@media (min-width: 1224px) {
@@ -133,6 +170,7 @@ const StatText = styled.p<StatTextTypes>`
 	margin-top: ${({ marginTop }) => marginTop};
 
 	@media (min-width: 768px) {
+		margin-top: 0;
 	}
 
 	@media (min-width: 1224px) {
@@ -191,10 +229,16 @@ const Planet = ({ planets, selected, setSelected }: PlanetPropTypes) => {
 							<Heading>{name.toUpperCase()}</Heading>
 							<BodyText>{description}</BodyText>
 							<Hr />
-							<StatText marginTop='2rem'>AVG. DISTANCE</StatText>
-							<Stat>{distance.toUpperCase()}</Stat>
-							<StatText marginTop='2rem'>Est. travel time</StatText>
-							<Stat>{travel.toUpperCase()}</Stat>
+							<StatContainer>
+								<div>
+									<StatText>AVG. DISTANCE</StatText>
+									<Stat>{distance.toUpperCase()}</Stat>
+								</div>
+								<div>
+									<StatText marginTop='2rem'>Est. travel time</StatText>
+									<Stat>{travel.toUpperCase()}</Stat>
+								</div>
+							</StatContainer>
 						</React.Fragment>
 					);
 				}
