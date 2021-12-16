@@ -8,7 +8,7 @@ export const Nav = styled.nav`
 	display: flex;
 	align-items: start;
 	width: 100vw;
-	height: 100px;
+	height: 12vh;
 
 	@media (min-width: 1224px) {
 		align-items: end;

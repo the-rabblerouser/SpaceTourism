@@ -4,21 +4,6 @@ import styled from 'styled-components';
 
 import data from '../../lib/data.json';
 
-const Img = styled.img`
-	height: 170px;
-	width: 170px;
-	margin-top: 32px;
-
-	@media (min-width: 768px) {
-		height: 300px;
-		width: 300px;
-		margin-top: 60px;
-	}
-
-	@media (min-width: 1224px) {
-	}
-`;
-
 const PlanetToggleContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
@@ -34,6 +19,8 @@ const PlanetToggleContainer = styled.div`
 	}
 
 	@media (min-width: 1224px) {
+		height: 34px;
+		width: 285.5px;
 	}
 `;
 
@@ -96,6 +83,11 @@ const Heading = styled.h2`
 	}
 
 	@media (min-width: 1224px) {
+		margin: 37px 0 14px 0;
+		font-size: 100px;
+		line-height: 115px;
+		letter-spacing: 0px;
+		text-align: left;
 	}
 `;
 
@@ -120,6 +112,12 @@ const BodyText = styled.p`
 	}
 
 	@media (min-width: 1224px) {
+		height: 128px;
+		width: 444px;
+		font-size: 19px;
+		line-height: 32px;
+		letter-spacing: 1px;
+		text-align: left;
 	}
 `;
 
@@ -150,6 +148,9 @@ const StatContainer = styled.div`
 	}
 
 	@media (min-width: 1224px) {
+		justify-content: flex-start;
+		margin-top: 54px;
+		padding-top: 28px;
 	}
 `;
 
@@ -174,6 +175,8 @@ const StatText = styled.p<StatTextTypes>`
 	}
 
 	@media (min-width: 1224px) {
+		text-align: left;
+		margin-right: 160px;
 	}
 `;
 
@@ -192,6 +195,7 @@ const Stat = styled.p`
 	}
 
 	@media (min-width: 1224px) {
+		text-align: left;
 	}
 `;
 
@@ -208,7 +212,6 @@ const Planet = ({ planets, selected, setSelected }: PlanetPropTypes) => {
 
 	return (
 		<>
-			<Img src={`./assets/destination/image-${selected.toLowerCase()}.png`} />
 			<PlanetToggleContainer>
 				{planets.map((planet) => {
 					return (
