@@ -1,7 +1,6 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import destination from '../../pages/destination';
 
 import data from '../../lib/data.json';
 
@@ -67,35 +66,31 @@ const PlanetLink = styled.button<PlanetLinkTypes>`
 `;
 
 const Heading = styled.h2`
-    height: 64px;
-    width: 187px;
+	height: 64px;
+	width: 100%;
 	font-family: ${({ theme }) => theme.bellefair};
 	font-size: 56px;
-    font-weight: 400;
-    line-height: 64.18px;
-    text-align: center;
-	margin: 20px; 0 0 0;
+	font-weight: 400;
+	line-height: 64.18px;
+	text-align: center;
+	margin: 20px 0 0 0;
 	color: ${({ theme }) => theme.white};
 
 	@media (min-width: 768px) {
-		
 	}
 
 	@media (min-width: 1224px) {
-		
 	}
 `;
 
 const BodyText = styled.p`
-	height: 125px;
-	width: 327px;
-	margin: 1px 0 0 0;
+	width: 257px;
+	margin: 1px 0 2rem 0;
 	font-family: ${({ theme }) => theme.barlow};
 	font-style: normal;
 	font-weight: 400;
 	font-size: 15px;
-	line-height: 167%;
-	word-spacing: 1px;
+	line-height: 25px;
 	text-align: center;
 	color: ${({ theme }) => theme.purple};
 
@@ -168,16 +163,10 @@ interface PlanetPropTypes {
 	setSelected: (planet: string) => void;
 }
 
-interface DataType {
-	destinations: object;
-}
-
 const Planet = ({ planets, selected, setSelected }: PlanetPropTypes) => {
 	const planetToggle = (planet: string) => setSelected(planet);
 
-	const { destinations }: DataType = data;
-
-	console.log(destinations);
+	const destinations = data.destinations;
 
 	return (
 		<>
@@ -195,35 +184,21 @@ const Planet = ({ planets, selected, setSelected }: PlanetPropTypes) => {
 					);
 				})}
 			</PlanetToggleContainer>
-			{/* {destinations.map((planet) => {
-				if (planet.toUpperCase() === selected) {
+			{destinations.map(({ name, description, distance, travel }) => {
+				if (name.toUpperCase() === selected) {
 					return (
-						<>
-							<Heading>{planet.name}</Heading>
-							<BodyText>
-                            {planet.description}
-							</BodyText>
+						<React.Fragment key={name}>
+							<Heading>{name.toUpperCase()}</Heading>
+							<BodyText>{description}</BodyText>
 							<Hr />
-							<StatText>AVG. DISTANCE</StatText>
-							<Stat>384,400 km</Stat>
+							<StatText marginTop='2rem'>AVG. DISTANCE</StatText>
+							<Stat>{distance.toUpperCase()}</Stat>
 							<StatText marginTop='2rem'>Est. travel time</StatText>
-							<Stat>3 DAYS</Stat>
-						</>
+							<Stat>{travel.toUpperCase()}</Stat>
+						</React.Fragment>
 					);
 				}
-			})} */}
-			<Heading>MOON</Heading>
-			<BodyText>
-				See our planet as you&apos;ve never seen it before. A perfect relaxing
-				trip away to help regain perspective and come back refreshed. While
-				you&apos;re there, take in some history by visiting the Luna 2 and
-				Apollo 11 landing sites.
-			</BodyText>
-			<Hr />
-			<StatText>AVG. DISTANCE</StatText>
-			<Stat>384,400 km</Stat>
-			<StatText marginTop='2rem'>Est. travel time</StatText>
-			<Stat>3 DAYS</Stat>
+			})}
 		</>
 	);
 };
