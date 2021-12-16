@@ -19,7 +19,7 @@ const Body = styled.div`
 	@media (min-width: 1224px) {
 		background-image: url('/assets/home/background-home-desktop.jpg');
 		background-position: right;
-		background-size: 65vw 100vh;
+		background-size: 80vw 100vh;
 	}
 `;
 
@@ -33,6 +33,25 @@ const Container = styled.div`
 	}
 
 	@media (min-width: 1224px) {
+		height: 70vh;
+		justify-content: space-around;
+		flex-direction: row;
+		align-items: end;
+	}
+`;
+
+const TextContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	@media (min-width: 768px) {
+	}
+
+	@media (min-width: 1224px) {
+		heightL 382px;
+		width: 450px;
 	}
 `;
 
@@ -51,6 +70,11 @@ export const SubHeading = styled.h6`
 	}
 
 	@media (min-width: 1224px) {
+		font-size: 28px;
+		letter-spacing: 4.72px;
+		line-height: auto;
+		margin: 5rem 0 0 0;
+		word-spacing: 1px;
 	}
 `;
 
@@ -67,6 +91,7 @@ const Heading = styled.h2`
 	}
 
 	@media (min-width: 1224px) {
+		margin: 1rem 0 0 0;
 	}
 `;
 
@@ -91,6 +116,12 @@ const BodyText = styled.p`
 	}
 
 	@media (min-width: 1224px) {
+		height: 128px;
+		margin: 1rem 0 0 0;
+		font-size: 22px;
+		line-height: 32px;
+		text-align: left;
+		word-spacing: 0px;
 	}
 `;
 
@@ -119,6 +150,9 @@ const Oval = styled.div`
 	}
 
 	@media (min-width: 1224px) {
+		align-self: end;
+		height: 274px;
+		width: 274px;
 	}
 `;
 
@@ -129,14 +163,16 @@ const Home: NextPage = () => {
 				<Navbar />
 				<main>
 					<Container>
-						<SubHeading>SO, YOU WANT TO TRAVEL TO</SubHeading>
-						<Heading>SPACE</Heading>
-						<BodyText>
-							Let&apos;s face it; if you want to go to space, you might as well
-							genuinely go to outer space and not hover kind of on the edge of
-							it. Well sit back, and relax because we&apos;ll give you a truly
-							out of this world experience!
-						</BodyText>
+						<TextContainer>
+							<SubHeading>SO, YOU WANT TO TRAVEL TO</SubHeading>
+							<Heading>SPACE</Heading>
+							<BodyText>
+								Let&apos;s face it; if you want to go to space, you might as
+								well genuinely go to outer space and not hover kind of on the
+								edge of it. Well sit back, and relax because we&apos;ll give you
+								a truly out of this world experience!
+							</BodyText>
+						</TextContainer>
 						<Oval>EXPLORE</Oval>
 					</Container>
 				</main>
