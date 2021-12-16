@@ -25,6 +25,7 @@ const theme = {
 	// Colors
 	black: `#0B0D17`,
 	purple: '#D0D6F9',
+	grey: '#979797',
 	white: '#FFFFFF',
 
 	//Fonts

@@ -97,7 +97,7 @@ export const NavLink = styled.a`
 	cursor: pointer;
 
 	&:hover {
-		border-bottom: 3px solid ${({ theme }) => theme.white};
+		border-bottom: 3px solid ${({ theme }) => theme.grey};
 	}
 
 	@media (min-width: 768px) {

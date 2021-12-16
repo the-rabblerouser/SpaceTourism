@@ -18,7 +18,7 @@ export const ModalMain = styled.div`
 	align-items: start;
 	height: 100vh;
 	width: 254px;
-	background-color: rgba(255, 255, 255, 0.04);
+	background-color: rgba(255, 255, 255, 0.1);
 `;
 
 export const ModalLinkContainer = styled.div`
@@ -34,7 +34,7 @@ export const ModalLink = styled.a`
 	display: flex;
 	align-items: center;
 	height: 100%;
-	width: 95%;
+	width: 100%;
 	font-family: ${({ theme }) => theme.barlow};
 	color: ${({ theme }) => theme.white};
 	font-size: 16px;
@@ -42,7 +42,7 @@ export const ModalLink = styled.a`
 	cursor: pointer;
 
 	&:hover {
-		border-right: 3px solid ${({ theme }) => theme.white};
+		border-right: 3px solid ${({ theme }) => theme.gray};
 	}
 `;
 

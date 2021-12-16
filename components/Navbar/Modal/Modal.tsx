@@ -18,7 +18,7 @@ interface ModalTypes {
 	onClose: () => void;
 }
 
-const Modal = ({ styles, onClose }: ModalTypes) => {
+const Modal = ({ styles, onClose, showModal }: ModalTypes) => {
 	return (
 		<animated.div style={styles} onClick={onClose}>
 			<ModalContainer>
