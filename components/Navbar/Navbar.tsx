@@ -74,13 +74,7 @@ const Navbar = () => {
 
 			{transitions(
 				(styles, item) =>
-					item && (
-						<Modal
-							styles={styles}
-							showModal={showModal}
-							onClose={() => setshowModal(false)}
-						/>
-					)
+					item && <Modal styles={styles} onClose={() => setshowModal(false)} />
 			)}
 		</>
 	);
