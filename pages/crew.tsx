@@ -155,7 +155,7 @@ const TextContainer = styled.section`
 const ToggleContainer = styled.section`
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	align-items: center;
 	height: 10px;
 	width: 88px;
