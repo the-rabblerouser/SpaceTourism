@@ -1,10 +1,6 @@
-import React from 'react';
-
 import styled from 'styled-components';
 
-import data from '../../lib/data.json';
-
-const PlanetToggleContainer = styled.div`
+export const PlanetToggleContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -29,7 +25,7 @@ interface PlanetLinkTypes {
 	planet: string;
 }
 
-const PlanetLink = styled.button<PlanetLinkTypes>`
+export const PlanetLink = styled.button<PlanetLinkTypes>`
 	display: inline-block;
 	height: 17px;
 	padding-bottom: 30px;
@@ -62,7 +58,7 @@ const PlanetLink = styled.button<PlanetLinkTypes>`
 	}
 `;
 
-const Heading = styled.h2`
+export const Heading = styled.h2`
 	height: 64px;
 	width: 100%;
 	font-family: ${({ theme }) => theme.bellefair};
@@ -91,7 +87,7 @@ const Heading = styled.h2`
 	}
 `;
 
-const BodyText = styled.p`
+export const BodyText = styled.p`
 	width: 257px;
 	margin: 1px 0 0 0;
 	font-family: ${({ theme }) => theme.barlow};
@@ -121,7 +117,7 @@ const BodyText = styled.p`
 	}
 `;
 
-const Hr = styled.hr`
+export const Hr = styled.hr`
 	height: 1px;
 	width: 327px;
 	border-radius: 0px;
@@ -135,7 +131,7 @@ const Hr = styled.hr`
 	}
 `;
 
-const StatContainer = styled.div`
+export const StatContainer = styled.div`
 	@media (min-width: 768px) {
 		display: flex;
 		flex-direction: row;
@@ -158,7 +154,7 @@ interface StatTextTypes {
 	marginTop?: string;
 }
 
-const StatText = styled.p<StatTextTypes>`
+export const StatText = styled.p<StatTextTypes>`
 	font-family: ${({ theme }) => theme.barlow};
 	font-size: 14px;
 	font-style: normal;
@@ -180,7 +176,7 @@ const StatText = styled.p<StatTextTypes>`
 	}
 `;
 
-const Stat = styled.p`
+export const Stat = styled.p`
 	font-family: ${({ theme }) => theme.bellefair};
 	font-size: 28px;
 	font-style: normal;
@@ -198,56 +194,3 @@ const Stat = styled.p`
 		text-align: left;
 	}
 `;
-
-interface PlanetPropTypes {
-	planets: string[];
-	selected: string;
-	setSelected: (planet: string) => void;
-}
-
-const Planet = ({ planets, selected, setSelected }: PlanetPropTypes) => {
-	const planetToggle = (planet: string) => setSelected(planet);
-
-	const destinations = data.destinations;
-
-	return (
-		<>
-			<PlanetToggleContainer>
-				{planets.map((planet) => {
-					return (
-						<PlanetLink
-							key={planet}
-							selected={selected}
-							planet={planet}
-							onClick={() => planetToggle(planet)}>
-							{planet}
-						</PlanetLink>
-					);
-				})}
-			</PlanetToggleContainer>
-			{destinations.map(({ name, description, distance, travel }) => {
-				if (name.toUpperCase() === selected) {
-					return (
-						<React.Fragment key={name}>
-							<Heading>{name.toUpperCase()}</Heading>
-							<BodyText>{description}</BodyText>
-							<Hr />
-							<StatContainer>
-								<div>
-									<StatText>AVG. DISTANCE</StatText>
-									<Stat>{distance.toUpperCase()}</Stat>
-								</div>
-								<div>
-									<StatText marginTop='2rem'>Est. travel time</StatText>
-									<Stat>{travel.toUpperCase()}</Stat>
-								</div>
-							</StatContainer>
-						</React.Fragment>
-					);
-				}
-			})}
-		</>
-	);
-};
-
-export default Planet;
