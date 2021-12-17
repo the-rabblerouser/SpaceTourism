@@ -140,7 +140,7 @@ const Img = styled.img`
 	}
 `;
 
-const TextContainer = styled.section`
+const TextContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -152,7 +152,7 @@ const TextContainer = styled.section`
 	}
 `;
 
-const ToggleContainer = styled.section`
+const ToggleContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -165,11 +165,13 @@ const ToggleContainer = styled.section`
 	}
 `;
 
-const ToggleIcon = styled.section`
+const ToggleIcon = styled.button`
 	height: 10px;
 	width: 10px;
 	border-radius: 100%;
+	border: none;
 	background: ${({ theme }) => theme.grey};
+	cursor: pointer;
 
 	@media (min-width: 1224px) {
 	}
