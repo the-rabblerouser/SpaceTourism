@@ -1,9 +1,11 @@
+import React, { useState } from 'react';
 import { NextPage } from 'next';
-import React from 'react';
 
 import styled from 'styled-components';
 
 import Navbar from '../components/Navbar/Navbar';
+
+import data from '../lib/data.json';
 
 const Body = styled.div`
 	height: 100vh;
@@ -230,6 +232,14 @@ const BodyText = styled.p`
 `;
 
 const crew: NextPage = () => {
+	const [selected, setSelected] = useState<string>('Douglas Hurley');
+	const [crew] = useState<string[]>([
+		'Douglas Hurley',
+		'Mark Shuttleworth',
+		'Victor Glover',
+		'Anousheh Ansari',
+	]);
+
 	return (
 		<>
 			<Body>
@@ -240,7 +250,7 @@ const crew: NextPage = () => {
 							<Span>02</Span> MEET YOUR CREW
 						</SubHeading>
 						<ImgContainer>
-							<Img src='./assets/crew/image-douglas-hurley.png' />
+							<Img src={`./assets/crew/image-${selected}.png`} />
 						</ImgContainer>
 						<TextContainer>
 							<ToggleContainer>
