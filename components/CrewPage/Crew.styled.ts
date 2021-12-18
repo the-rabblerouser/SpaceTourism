@@ -160,12 +160,18 @@ export const ToggleContainer = styled.div`
 	}
 `;
 
-export const ToggleIcon = styled.button`
+interface ToggleIconTypes {
+	selected: string;
+	crew: string;
+}
+
+export const ToggleIcon = styled.button<ToggleIconTypes>`
 	height: 10px;
 	width: 10px;
 	border-radius: 100%;
 	border: none;
-	background: ${({ theme }) => theme.grey};
+	background: ${({ selected, crew }) =>
+		crew === selected ? '#FFFFFF' : '#979797'};
 	cursor: pointer;
 
 	@media (min-width: 1224px) {
@@ -174,7 +180,7 @@ export const ToggleIcon = styled.button`
 
 export const Title = styled.h6`
 	height: 18px;
-	width: 107px;
+	width: 100%;
 	font-family: ${({ theme }) => theme.bellefair};
 	font-style: normal;
 	font-weight: normal;

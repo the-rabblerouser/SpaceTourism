@@ -17,28 +17,32 @@ import {
 	BodyText,
 } from '../components/CrewPage/Crew.styled';
 
-// import data from '../lib/data.json';
+import data from '../lib/data.json';
+
+const nameChange = (name: string) => {
+	const nameSplit = name.split(/(\s+)/);
+	const nameArr = [...nameSplit];
+	const removedSpaces = nameArr.filter((item) => item !== ' ');
+
+	const lowerCase = removedSpaces.map((word) => {
+		return word[0].toLowerCase() + word.slice(1);
+	});
+
+	return `${lowerCase[0]}-${lowerCase[1]}`;
+};
 
 const crew: NextPage = () => {
 	const [selected, setSelected] = useState<string>('Douglas Hurley');
-	const [crew] = useState<string[]>([
+	const [crewMembers] = useState<string[]>([
 		'Douglas Hurley',
 		'Mark Shuttleworth',
 		'Victor Glover',
 		'Anousheh Ansari',
 	]);
 
-	const nameChange = (name: string) => {
-		const nameSplit = name.split(/(\s+)/);
-		const nameArr = [...nameSplit];
-		const removedSpaces = nameArr.filter((item) => item !== ' ');
+	const crewData = data.crew;
 
-		const lowerCase = removedSpaces.map((word) => {
-			return word[0].toLowerCase() + word.slice(1);
-		});
-
-		return `${lowerCase[0]}-${lowerCase[1]}`;
-	};
+	const crewToggle = (crew: string) => setSelected(crew);
 
 	return (
 		<>
@@ -54,18 +58,26 @@ const crew: NextPage = () => {
 						</ImgContainer>
 						<TextContainer>
 							<ToggleContainer>
-								<ToggleIcon />
-								<ToggleIcon />
-								<ToggleIcon />
-								<ToggleIcon />
+								{crewMembers.map((crew) => (
+									<ToggleIcon
+										key={crew}
+										selected={selected}
+										crew={crew}
+										onClick={() => crewToggle(crew)}
+									/>
+								))}
 							</ToggleContainer>
-							<Title>COMMANDER</Title>
-							<Name>DOUGLAS HURLEY</Name>
-							<BodyText>
-								Douglas Gerald Hurley is an American engineer, former Marine
-								Corps pilot and former NASA astronaut. He launched into space
-								for the third time as commander of Crew Dragon Demo-2.
-							</BodyText>
+							{crewData.map(({ name, role, bio }) => {
+								if (name === selected) {
+									return (
+										<React.Fragment key={name}>
+											<Title>{role}</Title>
+											<Name>{name}</Name>
+											<BodyText>{bio}</BodyText>
+										</React.Fragment>
+									);
+								}
+							})}
 						</TextContainer>
 					</Container>
 				</main>
