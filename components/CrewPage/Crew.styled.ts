@@ -25,18 +25,24 @@ export const Container = styled.div`
 	margin-top: 24px;
 
 	@media (min-width: 768px) {
+		display: grid;
+		justify-content: center;
+		align-items: center;
+		grid-columns-template: 1fr;
+		grid-rows-template: 1fr 1fr 1fr;
+		grid-template-areas:
+			'subHeading'
+			'bodyText'
+			'img';
+		height: 88vh;
+		width: 100vw;
+		margin-top: 0;
+		overflow: hidden;
+	}
 	}
 
 	@media (min-width: 1224px) {
-		display: grid;
-		justify-content: space-between;
-		height: 88vh;
-		width: 100vw;
-		grid-columns-template: 1fr 1fr 2fr;
-		grid-rows-template: 2fr;
-		grid-template-areas:
-			'subheading planet planet'
-			'moon planet planet';
+	
 	}
 `;
 
@@ -45,6 +51,8 @@ export const SubHeading = styled.h6`
 	font-family: ${({ theme }) => theme.barlow};
 	font-weight: 400;
 	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
 	color: ${({ theme }) => theme.white};
 	line-height: 19.2px;
 	letter-spacing: 2.7px;
@@ -52,12 +60,13 @@ export const SubHeading = styled.h6`
 	margin: 0 0 0 0;
 
 	@media (min-width: 768px) {
-		align-self: start;
-		margin: 40px 0 0 38.5px;
+		grid-area: subHeading;
+		justify-self: start;
+		width: 100vw;
+		margin: 0 0 0 39px;
 		font-size: 20px;
 		line-height: 24px;
 		letter-spacing: 3.375px;
-		text-align: left;
 	}
 
 	@media (min-width: 1224px) {
@@ -84,11 +93,10 @@ export const Span = styled.div`
 	text-align: center;
 
 	@media (min-width: 768px) {
+		font-weight: bold;
 		font-size: 20px;
-		font-weight: 700;
 		line-height: 24px;
 		letter-spacing: 3.375px;
-		text-align: left;
 	}
 
 	@media (min-width: 1224px) {
@@ -108,6 +116,11 @@ export const ImgContainer = styled.div`
 	border-bottom: 1px solid ${({ theme }) => theme.hrBlack};
 
 	@media (min-width: 768px) {
+		grid-area: img;
+		justify-self: center;
+		height: 532px;
+		width: 368.85333251953125px;
+		border-bottom: none;
 	}
 
 	@media (min-width: 1224px) {
@@ -120,17 +133,15 @@ export const Img = styled.img`
 	justify-self: center;
 
 	@media (min-width: 768px) {
-		height: 300px;
-		width: 300px;
-		margin-top: 60px;
+		height: 532px;
+		width: 368.85333251953125px;
+		margin-top: 40px;
 	}
 
 	@media (min-width: 1224px) {
 		grid-area: moon;
 		align-self: center;
 		justify-self: end;
-		width: 445px;
-		height: 445px;
 		margin: 0 0 0 230px;
 	}
 `;
@@ -143,6 +154,21 @@ export const TextContainer = styled.div`
 	height: 220px;
 	width: 327px;
 
+	@media (min-width: 768px) {
+		width: 536px;
+		height: 232px;
+		grid-area: bodyText;
+		display: grid;
+		justify-self: center;
+		grid-columns-template: 1fr;
+		grid-rows-template: 1fr 1fr 1fr 1fr;
+		grid-template-areas:
+			'title'
+			'name'
+			'bodytext'
+			'toggleContainer';
+	}
+
 	@media (min-width: 1224px) {
 	}
 `;
@@ -154,9 +180,11 @@ export const ToggleContainer = styled.div`
 	align-items: center;
 	height: 10px;
 	width: 88px;
-	margin: 32px 0 0 0;
 
-	@media (min-width: 1224px) {
+	@media (min-width: 768px) {
+		grid-area: toggleContainer;
+		justify-self: center;
+		margin: 40px 0 0 0;
 	}
 `;
 
@@ -190,6 +218,17 @@ export const Title = styled.h6`
 	opacity: 0.5;
 	text-align: center;
 	margin: 32px 0 0 0;
+
+	@media (min-width: 768px) {
+		grid-area: title;
+		font-size: 24px;
+		line-height: 28px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	@media (min-width: 1224px) {
+	}
 `;
 
 export const Name = styled.h5`
@@ -206,8 +245,20 @@ export const Name = styled.h5`
 	text-transform: uppercase;
 	line-height: auto;
 	letter-spacing: 0px;
-
 	margin: 8px 0 0 0;
+
+	@media (min-width: 768px) {
+		grid-area: name;
+		height: 46px;
+		width: 457px;
+		font-size: 40px;
+		line-height: 46px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	@media (min-width: 1224px) {
+	}
 `;
 
 export const BodyText = styled.p`
@@ -224,6 +275,12 @@ export const BodyText = styled.p`
 	margin: 16px 0 0 0;
 
 	@media (min-width: 768px) {
+		grid-area: bodytext;
+		height: 84px;
+		width: 458px;
+		font-size: 16px;
+		line-height: 28px;
+		text-align: center;
 	}
 
 	@media (min-width: 1224px) {
