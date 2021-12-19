@@ -35,17 +35,6 @@ export const Container = styled.div`
 	}
 
 	@media (min-width: 1224px) {
-		display: grid;
-		justify-content: space-evenly;
-		align-items: start;
-		height: 88vh;
-		width: 100vw;
-		grid-columns-template: 2fr 2fr;
-		grid-rows-template: 3fr;
-		grid-template-areas:
-			'subheading img'
-			'bodytext img'
-			'toggle img';
 	}
 `;
 
@@ -63,18 +52,14 @@ export const SubHeading = styled.h6`
 	margin: 0 0 0 0;
 
 	@media (min-width: 768px) {
+		align-self: start;
+		margin-left: 38px;
+		font-size: 20px;
+		line-height: 24px;
+		letter-spacing: 3.375px;
 	}
 
 	@media (min-width: 1224px) {
-		grid-area: subheading;
-		justify-self: start;
-		width: 300px;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 28px;
-		line-height: 34px;
-		letter-spacing: 4.725px;
-		margin: 76px 0 0 166px;
 	}
 `;
 
@@ -91,14 +76,13 @@ export const Span = styled.div`
 	text-align: center;
 
 	@media (min-width: 768px) {
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 24px;
+		letter-spacing: 3.375px;
 	}
 
 	@media (min-width: 1224px) {
-		font-style: normal;
-		font-weight: bold;
-		font-size: 28px;
-		line-height: 34px;
-		letter-spacing: 4.725px;
 	}
 `;
 
@@ -109,13 +93,11 @@ export const Img = styled.img`
 	margin-top: 32px;
 
 	@media (min-width: 768px) {
+		width: 768px;
+		height: 310px;
 	}
 
 	@media (min-width: 1224px) {
-		height: 100%;
-		width: 100%;
-		margin-top: 0;
-		margin-right: 137px;
 	}
 `;
 
@@ -129,6 +111,8 @@ export const ToggleContainer = styled.div`
 	margin-top: 34px;
 
 	@media (min-width: 768px) {
+		width: 210px;
+		height: 60px;
 	}
 
 	@media (min-width: 1224px) {
@@ -161,9 +145,16 @@ export const ToggleIcon = styled.button<ToggleIconTypes>`
 	color: ${({ selected, tech }) => (tech === selected ? '#0B0D17' : '#FFFFFF')};
 	cursor: pointer;
 
+	@media (min-width: 768px) {
+		height: 60px;
+		width: 60px;
+		font-size: 24px;
+		line-height: 28px;
+		text-align: center;
+		letter-spacing: 1.5px;
+	}
+
 	@media (min-width: 1224px) {
-		height: 15px;
-		width: 15px;
 	}
 `;
 
@@ -177,6 +168,9 @@ export const TextContainer = styled.div`
 	margin: 26px 0 0 0;
 
 	@media (min-width: 768px) {
+		margin: 44px 0 0 0;
+		width: 458px;
+		height: 237px;
 	}
 
 	@media (min-width: 1224px) {
@@ -198,6 +192,9 @@ export const Title = styled.h6`
 	margin: 26px 0 0 0;
 
 	@media (min-width: 768px) {
+		font-size: 16px;
+		line-height: 19px;
+		letter-spacing: 2.7px;
 	}
 
 	@media (min-width: 1224px) {
@@ -205,8 +202,6 @@ export const Title = styled.h6`
 `;
 
 export const Name = styled.h5`
-	height: 28px;
-	width: 327px;
 	font-family: ${({ theme }) => theme.bellefair};
 	font-family: Bellefair;
 	font-size: 24px;
@@ -221,16 +216,11 @@ export const Name = styled.h5`
 	margin: 9px 0 0 0;
 
 	@media (min-width: 768px) {
+		font-size: 40px;
+		line-height: 46px;
 	}
 
 	@media (min-width: 1224px) {
-		width: 100%;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 56px;
-		line-height: 64px;
-		text-align: left;
-		margin: 15px 0 0 0;
 	}
 `;
 
@@ -247,21 +237,11 @@ export const BodyText = styled.p`
 	margin: 16px 0 0 0;
 
 	@media (min-width: 768px) {
-		grid-area: bodytext;
-		height: 84px;
-		width: 458px;
 		font-size: 16px;
 		line-height: 28px;
-		text-align: center;
 	}
 
 	@media (min-width: 1224px) {
-		font-style: normal;
-		font-weight: normal;
-		font-size: 18px;
-		line-height: 32px;
-		text-align: left;
-		margin: 27px 0 0 0;
 	}
 `;
 
@@ -331,15 +311,6 @@ const technology: NextPage = () => {
 									);
 								}
 							})}
-							{/* <Title>The Terminology</Title>
-							<Name>Launch Vehicle</Name>
-							<BodyText>
-								A launch vehicle or carrier rocket is a rocket-propelled vehicle
-								used to carry a payload from Earth's surface to space, usually
-								to Earth orbit or beyond. Our WEB-X carrier rocket is the most
-								powerful in operation. Standing 150 metres tall, it's quite an
-								awe-inspiring sight on the launch pad!
-							</BodyText> */}
 						</TextContainer>
 					</Container>
 				</main>
