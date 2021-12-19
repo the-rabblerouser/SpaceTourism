@@ -42,7 +42,17 @@ export const Container = styled.div`
 	}
 
 	@media (min-width: 1224px) {
-	
+		display: grid;
+		justify-content: space-evenly;
+		align-items: start;
+		height: 88vh;
+		width: 100vw;
+		grid-columns-template: 2fr 2fr;
+		grid-rows-template: 3fr;
+		grid-template-areas:
+			'subheading img'
+			'bodytext img'
+			'toggle img';
 	}
 `;
 
@@ -71,12 +81,14 @@ export const SubHeading = styled.h6`
 
 	@media (min-width: 1224px) {
 		grid-area: subheading;
-		margin: 40px 0 0 166.5px;
-		font-family: Barlow Condensed;
+		justify-self: start;
+		width: 300px;
+		font-style: normal;
+		font-weight: bold;
 		font-size: 28px;
 		line-height: 34px;
-		letter-spacing: 4.724999904632568px;
-		text-align: left;
+		letter-spacing: 4.725px;
+		margin: 76px 0 0 166px;
 	}
 `;
 
@@ -100,10 +112,11 @@ export const Span = styled.div`
 	}
 
 	@media (min-width: 1224px) {
+		font-style: normal;
+		font-weight: bold;
 		font-size: 28px;
 		line-height: 34px;
-		letter-spacing: 4.724999904632568px;
-		text-align: left;
+		letter-spacing: 4.725px;
 	}
 `;
 
@@ -124,6 +137,11 @@ export const ImgContainer = styled.div`
 	}
 
 	@media (min-width: 1224px) {
+		grid-area: img;
+		justify-self: start;
+		align-self: start;
+		width: 100%;
+		height: 85vh;
 	}
 `;
 
@@ -139,10 +157,10 @@ export const Img = styled.img`
 	}
 
 	@media (min-width: 1224px) {
-		grid-area: moon;
-		align-self: center;
-		justify-self: end;
-		margin: 0 0 0 230px;
+		height: 100%;
+		width: 100%;
+		margin-top: 0;
+		margin-right: 137px;
 	}
 `;
 
@@ -152,7 +170,7 @@ export const TextContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	height: 220px;
-	width: 327px;
+	width: 100%;
 
 	@media (min-width: 768px) {
 		width: 536px;
@@ -170,6 +188,10 @@ export const TextContainer = styled.div`
 	}
 
 	@media (min-width: 1224px) {
+		width: 50vw;
+		grid-area: bodytext;
+		justify-content: start;
+		margin-left: 166px;
 	}
 `;
 
@@ -185,6 +207,13 @@ export const ToggleContainer = styled.div`
 		grid-area: toggleContainer;
 		justify-self: center;
 		margin: 40px 0 0 0;
+	}
+
+	@media (min-width: 1224px) {
+		justify-self: start;
+		width: 132px;
+		height: 15px;
+		margin: 125px 0 0 0;
 	}
 `;
 
@@ -203,6 +232,8 @@ export const ToggleIcon = styled.button<ToggleIconTypes>`
 	cursor: pointer;
 
 	@media (min-width: 1224px) {
+		height: 15px;
+		width: 15px;
 	}
 `;
 
@@ -215,6 +246,7 @@ export const Title = styled.h6`
 	font-size: 16px;
 	color: ${({ theme }) => theme.white};
 	line-height: 18.34px;
+	text-transform: uppercase;
 	opacity: 0.5;
 	text-align: center;
 	margin: 32px 0 0 0;
@@ -224,10 +256,16 @@ export const Title = styled.h6`
 		font-size: 24px;
 		line-height: 28px;
 		text-align: center;
-		text-transform: uppercase;
 	}
 
 	@media (min-width: 1224px) {
+		height: 37px;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 32px;
+		line-height: 37px;
+		text-align: left;
+		margin: 154px 0 0 0;
 	}
 `;
 
@@ -254,10 +292,16 @@ export const Name = styled.h5`
 		font-size: 40px;
 		line-height: 46px;
 		text-align: center;
-		text-transform: uppercase;
 	}
 
 	@media (min-width: 1224px) {
+		width: 100%;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 56px;
+		line-height: 64px;
+		text-align: left;
+		margin: 15px 0 0 0;
 	}
 `;
 
@@ -284,5 +328,11 @@ export const BodyText = styled.p`
 	}
 
 	@media (min-width: 1224px) {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 32px;
+		text-align: left;
+		margin: 27px 0 0 0;
 	}
 `;
