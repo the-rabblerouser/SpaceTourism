@@ -5,6 +5,8 @@ import styled from 'styled-components';
 
 import Navbar from '../components/Navbar/Navbar';
 
+import data from '../lib/data.json';
+
 export const Body = styled.div`
 	height: 100vh;
 	background-color: #0b0d17;
@@ -133,7 +135,12 @@ export const ToggleContainer = styled.div`
 	}
 `;
 
-export const ToggleIcon = styled.button`
+interface ToggleIconTypes {
+	selected: string;
+	tech: string;
+}
+
+export const ToggleIcon = styled.button<ToggleIconTypes>`
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -147,9 +154,11 @@ export const ToggleIcon = styled.button`
 	text-align: center;
 	letter-spacing: 1px;
 	background: none;
+	background: ${({ selected, tech }) =>
+		tech === selected ? '#FFFFFF' : 'none'};
 	border: 1px solid ${({ theme }) => theme.grey};
 	border-radius: 100%;
-	color: ${({ theme }) => theme.white};
+	color: ${({ selected, tech }) => (tech === selected ? '#0B0D17' : '#FFFFFF')};
 	cursor: pointer;
 
 	@media (min-width: 1224px) {
@@ -257,6 +266,34 @@ export const BodyText = styled.p`
 `;
 
 const technology: NextPage = () => {
+	const [selected, setSelected] = useState<string>('Launch vehicle');
+	const [launchTech] = useState<string[]>([
+		'Launch vehicle',
+		'Spaceport',
+		'Space capsule',
+	]);
+
+	const techData = data.technology;
+
+	const nameChange = (name: string) => {
+		const nameSplit = name.split(/(\s+)/);
+		const nameArr = [...nameSplit];
+
+		if (nameArr.length <= 1) {
+			return name.toLowerCase();
+		} else {
+			const removedSpaces = nameArr.filter((item) => item !== ' ');
+
+			const lowerCase = removedSpaces.map((word) => {
+				return word[0].toLowerCase() + word.slice(1);
+			});
+
+			return `${lowerCase[0]}-${lowerCase[1]}`;
+		}
+	};
+
+	const techToggle = (tech: string) => setSelected(tech);
+
 	return (
 		<>
 			<Body>
@@ -267,15 +304,34 @@ const technology: NextPage = () => {
 							<Span>03</Span> SPACE LAUNCH 101
 						</SubHeading>
 						<Img
-							src={`./assets/technology/image-launch-vehicle-landscape.jpg`}
+							src={`./assets/technology/image-${nameChange(
+								selected
+							)}-landscape.jpg`}
 						/>
 						<ToggleContainer>
-							<ToggleIcon>1</ToggleIcon>
-							<ToggleIcon>2</ToggleIcon>
-							<ToggleIcon>3</ToggleIcon>
+							{techData.map((tech, i) => (
+								<ToggleIcon
+									key={tech.name}
+									selected={selected}
+									onClick={() => techToggle(tech.name)}
+									tech={tech.name}>
+									{i + 1}
+								</ToggleIcon>
+							))}
 						</ToggleContainer>
 						<TextContainer>
-							<Title>The Terminology</Title>
+							{techData.map(({ name, description }) => {
+								if (name === selected) {
+									return (
+										<React.Fragment key={name}>
+											<Title>The Terminology</Title>
+											<Name>{name}</Name>
+											<BodyText>{description}</BodyText>
+										</React.Fragment>
+									);
+								}
+							})}
+							{/* <Title>The Terminology</Title>
 							<Name>Launch Vehicle</Name>
 							<BodyText>
 								A launch vehicle or carrier rocket is a rocket-propelled vehicle
@@ -283,7 +339,7 @@ const technology: NextPage = () => {
 								to Earth orbit or beyond. Our WEB-X carrier rocket is the most
 								powerful in operation. Standing 150 metres tall, it's quite an
 								awe-inspiring sight on the launch pad!
-							</BodyText>
+							</BodyText> */}
 						</TextContainer>
 					</Container>
 				</main>
