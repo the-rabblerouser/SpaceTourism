@@ -61,7 +61,7 @@ export const SubHeading = styled.h6`
 
 	@media (min-width: 1224px) {
 		grid-area: subheading;
-		margin: 40px 0 0 166.5px;
+		margin: 76px 0 0 166.5px;
 		font-family: Barlow Condensed;
 		font-size: 28px;
 		line-height: 34px;
