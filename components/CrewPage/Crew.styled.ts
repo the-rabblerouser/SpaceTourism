@@ -22,7 +22,6 @@ export const Container = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 24px;
 
 	@media (min-width: 768px) {
 		display: grid;
@@ -171,6 +170,7 @@ export const TextContainer = styled.div`
 	align-items: center;
 	height: 220px;
 	width: 100%;
+	margin: 32px 0 0 0;
 
 	@media (min-width: 768px) {
 		width: 536px;

@@ -42,21 +42,21 @@ export const Container = styled.div`
 export const SubHeading = styled.h6`
 	display: flex;
 	font-family: ${({ theme }) => theme.barlow};
-	font-weight: 400;
+	font-style: normal;
+	font-weight: normal;
 	font-size: 16px;
 	color: ${({ theme }) => theme.white};
 	line-height: 19.2px;
 	letter-spacing: 2.7px;
 	text-transform: uppercase;
-	margin: 40px 0 0 0;
+	margin: 0 0 0 0;
 
 	@media (min-width: 768px) {
 		align-self: start;
-		margin: 40px 0 0 38.5px;
+		margin: 0 0 0 39px;
 		font-size: 20px;
 		line-height: 24px;
 		letter-spacing: 3.375px;
-		text-align: left;
 	}
 
 	@media (min-width: 1224px) {
