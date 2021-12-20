@@ -27,7 +27,7 @@ const destination: NextPage = () => {
 								<Span>01</Span> PICK YOUR DESTINATION
 							</SubHeading>
 							<Img
-								src={`./assets/destination/image-${selected.toLowerCase()}.png`}
+								src={`./assets/destination/image-${selected.toLowerCase()}.webp`}
 							/>
 						</>
 						<PlanetContainer>

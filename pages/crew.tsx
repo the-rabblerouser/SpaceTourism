@@ -43,7 +43,7 @@ const crew: NextPage = () => {
 							<Span>02</Span> MEET YOUR CREW
 						</SubHeading>
 						<ImgContainer>
-							<Img src={`./assets/crew/image-${upperCase(selected)}.png`} />
+							<Img src={`./assets/crew/image-${upperCase(selected)}.webp`} />
 						</ImgContainer>
 						<TextContainer>
 							<ToggleContainer>
