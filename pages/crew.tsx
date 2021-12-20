@@ -17,19 +17,8 @@ import {
 	BodyText,
 } from '../components/CrewPage/Crew.styled';
 
+import { upperCase } from '../lib/utils/upperCase';
 import data from '../lib/data.json';
-
-const nameChange = (name: string) => {
-	const nameSplit = name.split(/(\s+)/);
-	const nameArr = [...nameSplit];
-	const removedSpaces = nameArr.filter((item) => item !== ' ');
-
-	const lowerCase = removedSpaces.map((word) => {
-		return word[0].toLowerCase() + word.slice(1);
-	});
-
-	return `${lowerCase[0]}-${lowerCase[1]}`;
-};
 
 const crew: NextPage = () => {
 	const [selected, setSelected] = useState<string>('Douglas Hurley');
@@ -54,7 +43,7 @@ const crew: NextPage = () => {
 							<Span>02</Span> MEET YOUR CREW
 						</SubHeading>
 						<ImgContainer>
-							<Img src={`./assets/crew/image-${nameChange(selected)}.png`} />
+							<Img src={`./assets/crew/image-${upperCase(selected)}.png`} />
 						</ImgContainer>
 						<TextContainer>
 							<ToggleContainer>
