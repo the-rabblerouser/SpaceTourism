@@ -49,7 +49,7 @@ const technology: NextPage = () => {
 							<Img
 								src={`./assets/technology/image-${lowerCase(
 									selected
-								)}-${photo}.jpgg`}
+								)}-${photo}.jpg`}
 							/>
 						</ImgContainer>
 						<MediaContainer>
