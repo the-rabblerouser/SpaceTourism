@@ -30,12 +30,18 @@ export const ModalLinkContainer = styled.div`
 	margin: 0.5rem 0 0 3rem;
 `;
 
-export const ModalLink = styled.a`
+interface ModallinkTypes {
+	pathname: string;
+}
+
+export const ModalLink = styled.a<ModallinkTypes>`
 	display: flex;
 	align-items: center;
 	height: 100%;
 	width: 100%;
 	font-family: ${({ theme }) => theme.barlow};
+	border-right: 3px solid
+		${({ href, pathname }) => (href === pathname ? '#FFFFFF' : 'none')};
 	color: ${({ theme }) => theme.white};
 	font-size: 16px;
 	letter-spacing: 2.7px;

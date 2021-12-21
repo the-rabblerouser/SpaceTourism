@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { useTransition } from 'react-spring';
 
@@ -21,6 +22,8 @@ import Modal from './Modal/Modal';
 const Navbar = () => {
 	const [showModal, setshowModal] = useState<boolean>(false);
 
+	const router = useRouter();
+
 	const transitions = useTransition(showModal, {
 		from: { opacity: 0, transform: 'translateX(240px)' },
 		enter: {
@@ -38,9 +41,11 @@ const Navbar = () => {
 		<>
 			<Nav>
 				<NavbarContainer>
-					<LogoContainer>
-						<Logo />
-					</LogoContainer>
+					<Link href='/' passHref>
+						<LogoContainer>
+							<Logo />
+						</LogoContainer>
+					</Link>
 					<HamburgerContainer
 						showModal={showModal}
 						onClick={() => setshowModal(true)}>
@@ -48,23 +53,23 @@ const Navbar = () => {
 					</HamburgerContainer>
 					{/* <Hr /> */}
 					<NavLinkContainer>
-						<Link href='/'>
-							<NavLink>
+						<Link href='/' passHref>
+							<NavLink pathname={router.pathname}>
 								<Span>00</Span> HOME
 							</NavLink>
 						</Link>
-						<Link href='/destination'>
-							<NavLink>
+						<Link href='/destination' passHref>
+							<NavLink pathname={router.pathname}>
 								<Span>01</Span> DESTINATION
 							</NavLink>
 						</Link>
-						<Link href='/crew'>
-							<NavLink>
+						<Link href='/crew' passHref>
+							<NavLink pathname={router.pathname}>
 								<Span>02</Span> CREW
 							</NavLink>
 						</Link>
-						<Link href='/technology'>
-							<NavLink>
+						<Link href='/technology' passHref>
+							<NavLink pathname={router.pathname}>
 								<Span>03</Span> TECHNOLOGY
 							</NavLink>
 						</Link>

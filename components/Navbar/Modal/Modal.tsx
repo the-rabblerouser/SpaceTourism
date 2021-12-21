@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { animated } from 'react-spring';
 
@@ -19,6 +20,8 @@ interface ModalTypes {
 }
 
 const Modal = ({ styles, onClose }: ModalTypes) => {
+	const router = useRouter();
+
 	return (
 		<animated.div style={styles} onClick={onClose}>
 			<ModalContainer>
@@ -27,23 +30,23 @@ const Modal = ({ styles, onClose }: ModalTypes) => {
 						<CloseContainer>
 							<CloseIcon />
 						</CloseContainer>
-						<Link href='/'>
-							<ModalLink>
+						<Link href='/' passHref>
+							<ModalLink pathname={router.pathname}>
 								<Span>00</Span> HOME
 							</ModalLink>
 						</Link>
-						<Link href='/destination'>
-							<ModalLink>
+						<Link href='/destination' passHref>
+							<ModalLink pathname={router.pathname}>
 								<Span>01</Span> DESTINATION
 							</ModalLink>
 						</Link>
-						<Link href='/crew'>
-							<ModalLink>
+						<Link href='/crew' passHref>
+							<ModalLink pathname={router.pathname}>
 								<Span>02</Span> CREW
 							</ModalLink>
 						</Link>
-						<Link href='/technology'>
-							<ModalLink>
+						<Link href='/technology' passHref>
+							<ModalLink pathname={router.pathname}>
 								<Span>03</Span> TECHNOLOGY
 							</ModalLink>
 						</Link>

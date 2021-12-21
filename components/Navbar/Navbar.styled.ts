@@ -30,7 +30,7 @@ export const NavbarContainer = styled.div`
 	}
 `;
 
-export const LogoContainer = styled.div`
+export const LogoContainer = styled.a`
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -86,12 +86,18 @@ export const NavLinkContainer = styled.div`
 	}
 `;
 
-export const NavLink = styled.a`
+interface NavlinkTypes {
+	pathname: string;
+}
+
+export const NavLink = styled.a<NavlinkTypes>`
 	display: flex;
 	align-items: center;
 	height: 100%;
 	font-family: ${({ theme }) => theme.barlow};
 	color: ${({ theme }) => theme.white};
+	border-bottom: 3px solid
+		${({ href, pathname }) => (href === pathname ? '#FFFFFF' : 'none')};
 	font-size: 16px;
 	letter-spacing: 2.7px;
 	cursor: pointer;
