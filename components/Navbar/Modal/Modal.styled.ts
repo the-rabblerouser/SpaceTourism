@@ -18,7 +18,9 @@ export const ModalMain = styled.div`
 	align-items: start;
 	height: 100vh;
 	width: 254px;
-	background-color: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.04);
+	backdrop-filter: blur(81.5485px);
+	-webkit-backdrop-filter: blur(81.5485px);
 `;
 
 export const ModalLinkContainer = styled.div`

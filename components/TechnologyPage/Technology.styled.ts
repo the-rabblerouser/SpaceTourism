@@ -106,16 +106,12 @@ export const ImgContainer = styled.div`
 	width: 100%;
 
 	@media (min-width: 768px) {
-		margin-top: 60px;
+		margin-top: 136px;
 	}
 
 	@media (min-width: 1224px) {
 		grid-area: img;
-		display: flex;
-		justify-content: end;
-		align-items: start;
 		width: 50vw;
-		height: 100%;
 	}
 `;
 
@@ -132,7 +128,7 @@ export const Img = styled.img`
 
 	@media (min-width: 1224px) {
 		justify-self: end;
-		margin-top: 136px;
+		margin-top: 0;
 		width: 515px;
 		height: 527px;
 	}
