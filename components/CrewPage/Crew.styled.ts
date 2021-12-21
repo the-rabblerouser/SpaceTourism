@@ -26,7 +26,7 @@ export const Container = styled.div`
 	@media (min-width: 768px) {
 		display: grid;
 		justify-content: center;
-		align-items: center;
+		align-items: start;
 		grid-columns-template: 1fr;
 		grid-rows-template: 1fr 1fr 1fr;
 		grid-template-areas:
@@ -69,10 +69,9 @@ export const SubHeading = styled.h6`
 	margin: 0 0 0 0;
 
 	@media (min-width: 768px) {
-		grid-area: subHeading;
-		justify-self: start;
-		width: 100vw;
-		margin: 0 0 0 39px;
+		width: 90vw;
+		align-self: start;
+		margin-right: 3px;
 		font-size: 20px;
 		line-height: 24px;
 		letter-spacing: 3.375px;

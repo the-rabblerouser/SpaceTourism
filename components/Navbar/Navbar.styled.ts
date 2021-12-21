@@ -19,7 +19,7 @@ export const NavbarContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 96px;
+	height: 12vh;
 	width: 100%;
 
 	@media (min-width: 768px) {
