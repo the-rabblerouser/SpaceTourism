@@ -21,7 +21,7 @@ import {
 import { lowerCase } from '../lib/utils/lowerCase';
 import data from '../lib/data.json';
 
-const technology: NextPage = () => {
+const Technology: NextPage = () => {
 	const [selected, setSelected] = useState<string>('Launch vehicle');
 	const [photo, setPhoto] = useState<string>('landscape');
 
@@ -85,4 +85,4 @@ const technology: NextPage = () => {
 	);
 };
 
-export default technology;
+export default Technology;

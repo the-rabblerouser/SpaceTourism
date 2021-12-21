@@ -20,7 +20,7 @@ import {
 import { upperCase } from '../lib/utils/upperCase';
 import data from '../lib/data.json';
 
-const crew: NextPage = () => {
+const Crew: NextPage = () => {
 	const [selected, setSelected] = useState<string>('Douglas Hurley');
 	const [crewMembers] = useState<string[]>([
 		'Douglas Hurley',
@@ -75,4 +75,4 @@ const crew: NextPage = () => {
 	);
 };
 
-export default crew;
+export default Crew;
