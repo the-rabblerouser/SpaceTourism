@@ -54,7 +54,7 @@ export const TextContainer = styled.div`
 export const SubHeading = styled.h6`
 	font-family: ${({ theme }) => theme.barlow};
 	font-size: 16px;
-	margin: 0;
+	margin: 48px 0 0 0;
 	color: ${({ theme }) => theme.purple};
 	letter-spacing: 2.36px;
 
