@@ -52,7 +52,6 @@ const Navbar = () => {
 						onClick={() => setshowModal(true)}>
 						<Hamburger />
 					</HamburgerContainer>
-
 					<NavLinkContainer>
 						<Hr />
 						<Link href='/' passHref>
