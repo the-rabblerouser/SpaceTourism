@@ -11,6 +11,7 @@ import {
 	Nav,
 	NavbarContainer,
 	LogoContainer,
+	Hr,
 	HamburgerContainer,
 	NavLinkContainer,
 	NavLink,
@@ -51,8 +52,9 @@ const Navbar = () => {
 						onClick={() => setshowModal(true)}>
 						<Hamburger />
 					</HamburgerContainer>
-					{/* <Hr /> */}
+
 					<NavLinkContainer>
+						<Hr />
 						<Link href='/' passHref>
 							<NavLink pathname={router.pathname}>
 								<Span>00</Span> HOME

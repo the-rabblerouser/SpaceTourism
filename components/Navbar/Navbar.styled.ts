@@ -23,10 +23,6 @@ export const NavbarContainer = styled.div`
 	width: 100%;
 
 	@media (min-width: 768px) {
-		height: 96px;
-	}
-
-	@media (min-width: 1224px) {
 	}
 `;
 
@@ -36,6 +32,10 @@ export const LogoContainer = styled.a`
 	align-items: center;
 	height: 100%;
 	width: 100px;
+
+	@media (min-width: 1224px) {
+		margin-top: 40px;
+	}
 `;
 
 export const HamburgerContainer = styled.button<HamburgerTypes>`
@@ -53,19 +53,6 @@ export const HamburgerContainer = styled.button<HamburgerTypes>`
 	}
 `;
 
-// export const Hr = styled.hr`
-// 	display: none;
-
-// 	@media (min-width: 1224px) {
-// 		display: inline;
-// 		position: sticky;
-// 		left: 167px;
-// 		width: 473px;
-// 		border-bottom: 0.0001px solid #979797;
-// 		color: #979797;
-// 	}
-// `;
-
 export const NavLinkContainer = styled.div`
 	display: none;
 
@@ -79,10 +66,27 @@ export const NavLinkContainer = styled.div`
 	}
 
 	@media (min-width: 1224px) {
+		position: relative;
 		display: flex;
 		justify-content: space-evenly;
-		height: 100%;
+		margin-top: 40px;
 		width: 830px;
+		height: 96px;
+	}
+`;
+
+export const Hr = styled.hr`
+	display: none;
+
+	@media (min-width: 1224px) {
+		display: flex;
+		position: absolute;
+		width: 473px;
+		height: 1px;
+		right: 802px;
+		top: 40px;
+		background: rgba(255, 255, 255, 0.04);
+		backdrop-filter: blur(81.5485px);
 	}
 `;
 
