@@ -53,7 +53,7 @@ export const SubHeading = styled.h6`
 
 	@media (min-width: 768px) {
 		align-self: start;
-		margin-left: 39px;
+		margin: 40px 0 0 39px;
 		font-size: 20px;
 		line-height: 24px;
 		letter-spacing: 3.375px;

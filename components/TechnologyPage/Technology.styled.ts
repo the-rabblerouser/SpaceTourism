@@ -56,7 +56,7 @@ export const SubHeading = styled.h6`
 
 	@media (min-width: 768px) {
 		align-self: start;
-		margin-left: 38px;
+		margin: 40px 0 0 38px;
 		font-size: 20px;
 		line-height: 24px;
 		letter-spacing: 3.375px;
@@ -105,6 +105,10 @@ export const ImgContainer = styled.div`
 	align-items: center;
 	width: 100%;
 
+	@media (min-width: 768px) {
+		margin-top: 60px;
+	}
+
 	@media (min-width: 1224px) {
 		grid-area: img;
 		display: flex;
@@ -141,6 +145,10 @@ justify-content: center;
 align-items: center;
 width: 100%;
 
+@media (min-width: 768px) {
+	margin-top: 44px;
+}
+
 @media (min-width: 1224px) {
     grid-area: media;
     display: flex;
@@ -163,6 +171,7 @@ export const ToggleContainer = styled.div`
 	@media (min-width: 768px) {
 		width: 210px;
 		height: 60px;
+		margin-top: 56px;
 	}
 
 	@media (min-width: 1224px) {
